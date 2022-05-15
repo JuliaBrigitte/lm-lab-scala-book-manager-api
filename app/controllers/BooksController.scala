@@ -14,12 +14,31 @@ class BooksController @Inject()(val controllerComponents: ControllerComponents, 
     Ok(Json.toJson(dataRepository.getAllBooks))
   }
 
-  def getBook(bookId: Long): Action[AnyContent] = Action {
+  def getBook(bookId: Long): Action[AnyContent] = Action
+  {
     var bookToReturn: Book = null
-    dataRepository.getBook(bookId) foreach { book =>
+    dataRepository.getBook(bookId) foreach
+    { book =>
       bookToReturn = book
     }
-    Ok(Json.toJson(bookToReturn))
+    NotFound(Json.toJson("Book not found"))
+//    if (bookToReturn eq null)
+//    {
+//      NotFound(Json.toJson("Book not found"))
+//    }
+//    else
+//    {
+//      Ok(Json.toJson(bookToReturn))
+//    }
+  
+    //Ok(Json.toJson(bookToReturn))
+  
+  
+    //    if (bookToReturn eq null)
+//    {
+//
+//    }
+    
   }
 
   def addBook() : Action[AnyContent] = Action {

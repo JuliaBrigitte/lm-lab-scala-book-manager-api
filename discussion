@@ -1,0 +1,31 @@
+Task 1: Discussion Task
+Explore the code and make notes on the following features and how it is being implemented in the code.
+
+We'd like you to note down what classes and methods are used and how the objects interact.
+
+The features are:
+
+Get all books
+Get a book by ID
+Add a book
+As well as the scala code, it's worth having a look at the routes file as well.
+
+Can you see where the routes for the books are configured? 🤔
+
+Here is a bit more detail on the play framework HTTP routing
+
+
+----
+
+
+The code is structure in the MVC way.
+Models
+Views
+Controllers
+in dedicated directories
+
+The routes in conf I found slightly less obvious, but it is a matter of opinion what is code and what is configuration
+
+The framework seems the rely heavily on annotations.
+Personally I am not a fan, because I am quick to debug and with annotations that gets more difficult.
+For many errors you will need to understand how the framework works before being able to fix stuff, instead of letting the debugger tell you what is happening.
