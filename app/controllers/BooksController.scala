@@ -22,22 +22,16 @@ class BooksController @Inject()(val controllerComponents: ControllerComponents, 
       bookToReturn = book
     }
     //NotFound(Json.toJson("Book not found"))
-//    if (bookToReturn eq null)
-//    {
-//      NotFound(Json.toJson("Book not found"))
-//    }
-//    else
-//    {
-//      Ok(Json.toJson(bookToReturn))
-//    }
+    if (bookToReturn eq null)
+    {
+      NotFound(Json.toJson("Book not found"))
+    }
+    else
+    {
+      Ok(Json.toJson(bookToReturn))
+    }
   
-    Ok(Json.toJson(bookToReturn))
-  
-  
-    //    if (bookToReturn eq null)
-//    {
-//
-//    }
+    //Ok(Json.toJson(bookToReturn))
     
   }
   
