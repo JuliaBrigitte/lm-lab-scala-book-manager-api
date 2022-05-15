@@ -1,4 +1,4 @@
-Task 1: Discussion Task
+Task 1: Discussion Task (discussed with a member of the cohort pre session)
 Explore the code and make notes on the following features and how it is being implemented in the code.
 
 We'd like you to note down what classes and methods are used and how the objects interact.
@@ -14,9 +14,7 @@ Can you see where the routes for the books are configured? 🤔
 
 Here is a bit more detail on the play framework HTTP routing
 
-
 ----
-
 
 The code is structure in the MVC way.
 Models
@@ -29,3 +27,22 @@ The routes in conf I found slightly less obvious, but it is a matter of opinion 
 The framework seems the rely heavily on annotations.
 Personally I am not a fan, because I am quick to debug and with annotations that gets more difficult.
 For many errors you will need to understand how the framework works before being able to fix stuff, instead of letting the debugger tell you what is happening.
+
+The directories repositories mocks a database in the file BookRepository
+In models the class Books defines the object used to interact with the fake database
+There are two Controllers, the HomeControllers serves the Welcome Page and the BooksController the api calls
+The corronsponding views are defined in the directory views.
+
+This is all quite apparent after looking at the routes in conf/routes
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /books                      controllers.BooksController.getAll()
+POST    /books                      controllers.BooksController.addBook()
+GET     /books/:bookId              controllers.BooksController.getBook(bookId: Long)
+
+
