@@ -16,6 +16,9 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    * The configuration in the `routes` file means that this method
    * will be called when the application receives a `GET` request with
    * a path of `/`.
+   *
+   * the corrosponding view is view/index.scala.html
+   *
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())

@@ -45,4 +45,9 @@ GET     /books                      controllers.BooksController.getAll()
 POST    /books                      controllers.BooksController.addBook()
 GET     /books/:bookId              controllers.BooksController.getBook(bookId: Long)
 
+On my late 2013 MacBook running play was trying for my patience. I had to wait and wait some more.
+All the while the MacBook went the full I pretent to be an airplane mode noise wise.
+I more than once changed things because I thought I did something wrong when all I had to do is wait a very long time indeed for everything.
+
+Extension Task 2: as previously discussed the HomeController serves the view/index.scala.html (which I changed for demonstration purposes)
 
