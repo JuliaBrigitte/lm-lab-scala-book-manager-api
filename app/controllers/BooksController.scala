@@ -21,7 +21,7 @@ class BooksController @Inject()(val controllerComponents: ControllerComponents, 
     { book =>
       bookToReturn = book
     }
-    NotFound(Json.toJson("Book not found"))
+    //NotFound(Json.toJson("Book not found"))
 //    if (bookToReturn eq null)
 //    {
 //      NotFound(Json.toJson("Book not found"))
@@ -31,7 +31,7 @@ class BooksController @Inject()(val controllerComponents: ControllerComponents, 
 //      Ok(Json.toJson(bookToReturn))
 //    }
   
-    //Ok(Json.toJson(bookToReturn))
+    Ok(Json.toJson(bookToReturn))
   
   
     //    if (bookToReturn eq null)
@@ -39,6 +39,19 @@ class BooksController @Inject()(val controllerComponents: ControllerComponents, 
 //
 //    }
     
+  }
+  
+  def deleteBook(delete: String, bookId: Long) : Action[AnyContent] = Action
+  {
+    val success=dataRepository.deleteBookById(bookId)
+    if (success)
+    {
+      Ok(Json.toJson("Book with id " + bookId + " deleted"))
+    }
+    else
+    {
+      Ok(Json.toJson("Book with id " + bookId + " does not exist"))
+    }
   }
 
   def addBook() : Action[AnyContent] = Action {
